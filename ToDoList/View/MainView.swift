@@ -10,11 +10,11 @@ import UIKit
 
 class MainView: UIView {
 	
-//	let tableView: UITableView = {
-//		let table = UITableView()
-//		table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-//		return table
-//	}()
+	let tableView: UITableView = {
+		let table = UITableView()
+		table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		return table
+	}()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
