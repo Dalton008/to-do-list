@@ -26,7 +26,9 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		self.view.backgroundColor = .white
 		self.navigationItem.title = "Tasks"
-		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+		let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+		button.tintColor = .purple
+		self.navigationItem.rightBarButtonItem = button
 //		self.view.setupConstraints(label: mainView, topAnchor: view.topAnchor, botAnchor: view.bottomAnchor, leftAnchor: view.leadingAnchor, rightAnchor: view.trailingAnchor, topConst: 0, botConst: 0, leadingConst: 0, trailingConst: 0, heightConst: nil, widthConst: nil)
 		
 		view.addSubview(tableView)
@@ -108,6 +110,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 		}))
 		present(sheet, animated: true)
 	}
-	
-	
 }
