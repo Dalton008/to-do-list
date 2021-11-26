@@ -57,6 +57,7 @@ class MainModel {
 	}
 	
 	func updateTask(item: ToDoListItem, newName: String) {
+		item.name = newName
 		do {
 			try persistentContainer.viewContext.save()
 		}

@@ -96,6 +96,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 					return
 				}
 				self?.updateTask(item: item, newName: newName)
+				print("update")
 			}))
 			self.present(alert, animated: true)
 		}))

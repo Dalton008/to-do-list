@@ -12,11 +12,11 @@ import CoreData
 
 extension ToDoListItem {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ToDoListItem> {
-        return NSFetchRequest<ToDoListItem>(entityName: "ToDoListItem")
-    }
+	@nonobjc public class func fetchRequest() -> NSFetchRequest<ToDoListItem> {
+		return NSFetchRequest<ToDoListItem>(entityName: "ToDoListItem")
+	}
 
-    @NSManaged public var dateCreate: Date
-    @NSManaged public var name: String
+	@NSManaged public var dateCreate: Date
+	@NSManaged public var name: String
 
 }
