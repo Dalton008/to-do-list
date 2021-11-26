@@ -38,21 +38,11 @@ class ViewController: UIViewController {
 	}
 
 	@objc private func didTapAdd() {
-//		let alert = UIAlertController(title: "New task", message: "Add new task", preferredStyle: .alert)
-//
-//		alert.addTextField(configurationHandler: nil)
-//		alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: { [weak self] _ in
-//			guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else {
-//				return
-//			}
-//			self?.createTask(with: text)
-//		}))
 		let child = ChildViewController()
 		child.transitioningDelegate = transition
 		child.modalPresentationStyle = .custom
-		
+		child.delegate = self
 		present(child, animated: true)
-//		present(alert, animated: true)
 	}
 	
 	private func getAllTasks() {
@@ -113,5 +103,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 			self?.removeTask(item: item)
 		}))
 		present(sheet, animated: true)
+	}
+}
+
+extension ViewController: SaveTaskToModelDelegate {
+	
+	func saveTask(with name: String) {
+		createTask(with: name)
+		getAllTasks()
 	}
 }

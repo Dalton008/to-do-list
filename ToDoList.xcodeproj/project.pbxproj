@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA1407592751282400EB4EDE /* ChildControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1407582751282400EB4EDE /* ChildControllerDelegate.swift */; };
+		FA14075B2751337800EB4EDE /* SaveTaskToModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14075A2751337800EB4EDE /* SaveTaskToModelDelegate.swift */; };
 		FA22B63E274F8AAA00E8AEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22B63D274F8AAA00E8AEE0 /* AppDelegate.swift */; };
 		FA22B642274F8AAA00E8AEE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22B641274F8AAA00E8AEE0 /* ViewController.swift */; };
 		FA22B648274F8AAA00E8AEE0 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA22B646274F8AAA00E8AEE0 /* ToDoList.xcdatamodeld */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA1407582751282400EB4EDE /* ChildControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildControllerDelegate.swift; sourceTree = "<group>"; };
+		FA14075A2751337800EB4EDE /* SaveTaskToModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTaskToModelDelegate.swift; sourceTree = "<group>"; };
 		FA22B63A274F8AAA00E8AEE0 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA22B63D274F8AAA00E8AEE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA22B641274F8AAA00E8AEE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				FAE5A81B2750F062007B4FE9 /* BlackoutController.swift */,
 				FAE5A8212750FBF6007B4FE9 /* PresentationController.swift */,
 				FAE5A8172750EB67007B4FE9 /* PanelTransition.swift */,
+				FA1407582751282400EB4EDE /* ChildControllerDelegate.swift */,
+				FA14075A2751337800EB4EDE /* SaveTaskToModelDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 				FAD3464C274F9616009F223D /* UIView+extension.swift in Sources */,
 				FA22B642274F8AAA00E8AEE0 /* ViewController.swift in Sources */,
 				FA22B658274F8FFF00E8AEE0 /* ChildView.swift in Sources */,
+				FA14075B2751337800EB4EDE /* SaveTaskToModelDelegate.swift in Sources */,
+				FA1407592751282400EB4EDE /* ChildControllerDelegate.swift in Sources */,
 				FAE5A8222750FBF6007B4FE9 /* PresentationController.swift in Sources */,
 				FA22B63E274F8AAA00E8AEE0 /* AppDelegate.swift in Sources */,
 				FA22B648274F8AAA00E8AEE0 /* ToDoList.xcdatamodeld in Sources */,

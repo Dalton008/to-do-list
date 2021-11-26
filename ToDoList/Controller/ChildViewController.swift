@@ -10,10 +10,29 @@ import UIKit
 
 class ChildViewController: UIViewController {
 	
+	private var childView = ChildView()
+	
+	weak var delegate: SaveTaskToModelDelegate?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .blue
-		view.layer.cornerRadius = 24
+		childView.delegate = self
+		addChildView()
 	}
 	
+	private func addChildView() {
+		self.view.setupConstraints(label: childView, topAnchor: view.topAnchor, botAnchor: view.bottomAnchor, leftAnchor: view.leadingAnchor, rightAnchor: view.trailingAnchor, topConst: 0, botConst: 0, leadingConst: 0, trailingConst: 0, heightConst: nil, widthConst: nil)
+	}
+}
+
+extension ChildViewController: ChildControllerDelegate {
+
+	func closeButtonDidTap() {
+		self.dismiss(animated: true, completion: nil)
+	}
+	
+	func saveButtonDidTap(taskName: String) {
+		delegate?.saveTask(with: taskName)
+		self.dismiss(animated: true, completion: nil)
+	}
 }
