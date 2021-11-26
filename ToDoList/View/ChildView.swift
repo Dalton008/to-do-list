@@ -35,11 +35,44 @@ class ChildView: UIView {
 		return textField
 	}()
 	
+	private lazy var priorityTitle: UILabel = {
+		let label = UILabel()
+		label.text = "Priority"
+		return label
+	}()
+	
+	private lazy var highPriorityButton: UIButton = {
+		let button = UIButton()
+		button.backgroundColor = .systemGray4
+		button.setTitle("High", for: .normal)
+		button.layer.cornerRadius = 10
+		button.addTarget(self, action: #selector(highPriorityButtonTap), for: .touchUpInside)
+		return button
+	}()
+	
+	private lazy var normalPriorityButton: UIButton = {
+		let button = UIButton()
+		button.backgroundColor = .systemOrange
+		button.setTitle("Normal", for: .normal)
+		button.layer.cornerRadius = 10
+		button.addTarget(self, action: #selector(normalPriorityButtonTap), for: .touchUpInside)
+		return button
+	}()
+	
+	private lazy var lowPriorityButton: UIButton = {
+		let button = UIButton()
+		button.backgroundColor = .systemGray4
+		button.setTitle("Low", for: .normal)
+		button.layer.cornerRadius = 10
+		button.addTarget(self, action: #selector(lowPriorityButtonTap), for: .touchUpInside)
+		return button
+	}()
+	
 	private lazy var saveButton: UIButton = {
 		let button = UIButton()
 		button.backgroundColor = .systemPurple
 		button.setTitle("Save", for: .normal)
-		button.layer.cornerRadius = 20
+		button.layer.cornerRadius = 10
 		button.addTarget(self, action: #selector(didTapSave), for: .touchUpInside)
 		return button
 	}()
@@ -59,6 +92,10 @@ class ChildView: UIView {
 		createMainTitle()
 		createCloseButton()
 		createMainTextField()
+		createPriorityTitle()
+		creatHighPriorityButton()
+		createNormalPriorityButton()
+		createLowPriorityButton()
 		createSaveButton()
 	}
 	
@@ -78,8 +115,42 @@ class ChildView: UIView {
 		self.setupConstraints(label: mainTextField, topAnchor: mainTitle.bottomAnchor, botAnchor: nil, leftAnchor: self.leadingAnchor, rightAnchor: self.trailingAnchor, topConst: 16, botConst: nil, leadingConst: 16, trailingConst: -16, heightConst: 50, widthConst: nil)
 	}
 	
+	private func createPriorityTitle() {
+		self.setupConstraints(label: priorityTitle, topAnchor: mainTextField.bottomAnchor, botAnchor: nil, leftAnchor: self.leadingAnchor, rightAnchor: self.trailingAnchor, topConst: 8, botConst: nil, leadingConst: 30, trailingConst: -16, heightConst: 50, widthConst: nil)
+	}
+	
+	private func creatHighPriorityButton() {
+		self.setupConstraints(label: highPriorityButton, topAnchor: priorityTitle.bottomAnchor, botAnchor: nil, leftAnchor: self.leadingAnchor, rightAnchor: nil, topConst: 4, botConst: nil, leadingConst: 16, trailingConst: nil, heightConst: 40, widthConst: 80)
+	}
+	
+	@objc func highPriorityButtonTap() {
+		highPriorityButton.backgroundColor = .systemOrange
+		lowPriorityButton.backgroundColor = .systemGray4
+		normalPriorityButton.backgroundColor = .systemGray4
+	}
+	
+	private func createNormalPriorityButton() {
+		self.setupConstraints(label: normalPriorityButton, topAnchor: priorityTitle.bottomAnchor, botAnchor: nil, leftAnchor: highPriorityButton.trailingAnchor, rightAnchor: nil, topConst: 4, botConst: nil, leadingConst: 8, trailingConst: nil, heightConst: 40, widthConst: 100)
+	}
+	
+	@objc private func normalPriorityButtonTap() {
+		highPriorityButton.backgroundColor = .systemGray4
+		lowPriorityButton.backgroundColor = .systemGray4
+		normalPriorityButton.backgroundColor = .systemOrange
+	}
+	
+	private func createLowPriorityButton() {
+		self.setupConstraints(label: lowPriorityButton, topAnchor: priorityTitle.bottomAnchor, botAnchor: nil, leftAnchor: normalPriorityButton.trailingAnchor, rightAnchor: nil, topConst: 4, botConst: nil, leadingConst: 8, trailingConst: nil, heightConst: 40, widthConst: 80)
+	}
+	
+	@objc private func lowPriorityButtonTap() {
+		highPriorityButton.backgroundColor = .systemGray4
+		lowPriorityButton.backgroundColor = .systemOrange
+		normalPriorityButton.backgroundColor = .systemGray4
+	}
+	
 	private func createSaveButton() {
-		self.setupConstraints(label: saveButton, topAnchor: mainTextField.bottomAnchor, botAnchor: nil, leftAnchor: self.leadingAnchor, rightAnchor: self.trailingAnchor, topConst: 16, botConst: nil, leadingConst: 16, trailingConst: -16, heightConst: 50, widthConst: nil)
+		self.setupConstraints(label: saveButton, topAnchor: highPriorityButton.bottomAnchor, botAnchor: nil, leftAnchor: self.leadingAnchor, rightAnchor: self.trailingAnchor, topConst: 16, botConst: nil, leadingConst: 16, trailingConst: -16, heightConst: 50, widthConst: nil)
 	}
 	
 	@objc func didTapSave() {
