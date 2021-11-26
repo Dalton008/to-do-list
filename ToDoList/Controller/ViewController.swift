@@ -76,11 +76,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let model = requestToModel.getModelItem(at: indexPath.row)
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		cell.textLabel?.text = "\(model.name)"
+		let cell = CustomTableViewCell(id: "\(indexPath.row)", text: model.name)
+		cell.selectionStyle = .none
 		return cell
 	}
-	 
+	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		let item = requestToModel.getModelItem(at: indexPath.row)
@@ -96,7 +96,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 					return
 				}
 				self?.updateTask(item: item, newName: newName)
-				print("update")
 			}))
 			self.present(alert, animated: true)
 		}))

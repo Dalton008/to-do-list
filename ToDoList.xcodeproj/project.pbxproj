@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FA1407592751282400EB4EDE /* ChildControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1407582751282400EB4EDE /* ChildControllerDelegate.swift */; };
 		FA14075B2751337800EB4EDE /* SaveTaskToModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14075A2751337800EB4EDE /* SaveTaskToModelDelegate.swift */; };
+		FA14075E2751486100EB4EDE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14075D2751486100EB4EDE /* CustomTableViewCell.swift */; };
+		FA1407602751543A00EB4EDE /* UIAlertController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14075F2751543A00EB4EDE /* UIAlertController+extension.swift */; };
 		FA22B63E274F8AAA00E8AEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22B63D274F8AAA00E8AEE0 /* AppDelegate.swift */; };
 		FA22B642274F8AAA00E8AEE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22B641274F8AAA00E8AEE0 /* ViewController.swift */; };
 		FA22B648274F8AAA00E8AEE0 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA22B646274F8AAA00E8AEE0 /* ToDoList.xcdatamodeld */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		FA1407582751282400EB4EDE /* ChildControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildControllerDelegate.swift; sourceTree = "<group>"; };
 		FA14075A2751337800EB4EDE /* SaveTaskToModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTaskToModelDelegate.swift; sourceTree = "<group>"; };
+		FA14075D2751486100EB4EDE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		FA14075F2751543A00EB4EDE /* UIAlertController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+extension.swift"; sourceTree = "<group>"; };
 		FA22B63A274F8AAA00E8AEE0 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA22B63D274F8AAA00E8AEE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA22B641274F8AAA00E8AEE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				FA22B657274F8FFF00E8AEE0 /* ChildView.swift */,
 				FAE5A81D2750F6E9007B4FE9 /* PresentAnimation.swift */,
 				FAE5A81F2750FA69007B4FE9 /* DismissAnimation.swift */,
+				FA14075D2751486100EB4EDE /* CustomTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD3464B274F9616009F223D /* UIView+extension.swift */,
+				FA14075F2751543A00EB4EDE /* UIAlertController+extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 			files = (
 				FA2D02D1274FDB00007FA98C /* MainModel.swift in Sources */,
 				FAE5A81A2750EEF3007B4FE9 /* ChildViewController.swift in Sources */,
+				FA1407602751543A00EB4EDE /* UIAlertController+extension.swift in Sources */,
 				FADFB9CF274FA86F00FE0873 /* ToDoListItem+CoreDataClass.swift in Sources */,
 				FAE5A8182750EB67007B4FE9 /* PanelTransition.swift in Sources */,
 				FAE5A8202750FA69007B4FE9 /* DismissAnimation.swift in Sources */,
@@ -210,6 +217,7 @@
 				FAD3464C274F9616009F223D /* UIView+extension.swift in Sources */,
 				FA22B642274F8AAA00E8AEE0 /* ViewController.swift in Sources */,
 				FA22B658274F8FFF00E8AEE0 /* ChildView.swift in Sources */,
+				FA14075E2751486100EB4EDE /* CustomTableViewCell.swift in Sources */,
 				FA14075B2751337800EB4EDE /* SaveTaskToModelDelegate.swift in Sources */,
 				FA1407592751282400EB4EDE /* ChildControllerDelegate.swift in Sources */,
 				FAE5A8222750FBF6007B4FE9 /* PresentationController.swift in Sources */,
