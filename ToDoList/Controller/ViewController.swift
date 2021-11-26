@@ -12,9 +12,9 @@ import Foundation
 
 class ViewController: UIViewController {
 	
-	private var mainView = MainView()
-	
 	private var requestToModel = MainModel()
+	
+	private let transition = PanelTransition()
 	
 	let tableView: UITableView = {
 		let table = UITableView()
@@ -29,7 +29,6 @@ class ViewController: UIViewController {
 		let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
 		button.tintColor = .purple
 		self.navigationItem.rightBarButtonItem = button
-//		self.view.setupConstraints(label: mainView, topAnchor: view.topAnchor, botAnchor: view.bottomAnchor, leftAnchor: view.leadingAnchor, rightAnchor: view.trailingAnchor, topConst: 0, botConst: 0, leadingConst: 0, trailingConst: 0, heightConst: nil, widthConst: nil)
 		
 		view.addSubview(tableView)
 		tableView.delegate = self
@@ -39,16 +38,21 @@ class ViewController: UIViewController {
 	}
 
 	@objc private func didTapAdd() {
-		let alert = UIAlertController(title: "New task", message: "Add new task", preferredStyle: .alert)
-
-		alert.addTextField(configurationHandler: nil)
-		alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: { [weak self] _ in
-			guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else {
-				return
-			}
-			self?.createTask(with: text)
-		}))
-		present(alert, animated: true)
+//		let alert = UIAlertController(title: "New task", message: "Add new task", preferredStyle: .alert)
+//
+//		alert.addTextField(configurationHandler: nil)
+//		alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: { [weak self] _ in
+//			guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else {
+//				return
+//			}
+//			self?.createTask(with: text)
+//		}))
+		let child = ChildViewController()
+		child.transitioningDelegate = transition
+		child.modalPresentationStyle = .custom
+		
+		present(child, animated: true)
+//		present(alert, animated: true)
 	}
 	
 	private func getAllTasks() {
