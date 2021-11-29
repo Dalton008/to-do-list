@@ -26,6 +26,7 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		self.view.backgroundColor = .white
 		self.navigationItem.title = "Tasks"
+		self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "appetite-italic", size: 24) ?? UIFont.systemFont(ofSize: 20)]
 		let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
 		button.tintColor = .purple
 		self.navigationItem.rightBarButtonItem = button
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.frame = view.bounds
+		tableView.separatorStyle = .none
 		getAllTasks()
 	}
 

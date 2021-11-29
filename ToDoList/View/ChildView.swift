@@ -15,6 +15,8 @@ class ChildView: UIView {
 	private lazy var mainTitle: UILabel = {
 		let label = UILabel()
 		label.text = "Add a new task"
+		let fontSize = label.font.pointSize
+		label.font = UIFont(name: "appetite-italic", size: 24)
 		return label
 	}()
 	
@@ -38,6 +40,8 @@ class ChildView: UIView {
 	private lazy var priorityTitle: UILabel = {
 		let label = UILabel()
 		label.text = "Priority"
+		let fontSize = label.font.pointSize
+		label.font = UIFont(name: "appetite-italic", size: fontSize)
 		return label
 	}()
 	
