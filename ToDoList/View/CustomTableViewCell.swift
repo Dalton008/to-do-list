@@ -33,16 +33,10 @@ final class CustomTableViewCell: UITableViewCell {
 
 	private func addFirstButton() {
 		let constY = NSLayoutConstraint(item: firstButton, attribute: .centerY, relatedBy: .equal, toItem: mainLabel, attribute: .centerY, multiplier: 1.0, constant: 1)
-		mainLabel.setupConstraints(label: firstButton, topAnchor: nil, botAnchor: nil, leftAnchor: mainLabel.leadingAnchor, rightAnchor: nil, topConst: nil, botConst: nil, leadingConst: 8, trailingConst: nil, heightConst: 24, widthConst: 24)
+		self.setupConstraints(label: firstButton, topAnchor: nil, botAnchor: nil, leftAnchor: mainLabel.leadingAnchor, rightAnchor: nil, topConst: nil, botConst: nil, leadingConst: 8, trailingConst: nil, heightConst: 24, widthConst: 24)
 		NSLayoutConstraint.activate([constY])
-		firstButton.layer.cornerRadius = 12
-		firstButton.layer.borderWidth = 2
-		firstButton.layer.borderColor = CGColor(srgbRed: 173.0/255.0, green: 173.0/255.0, blue: 173.0/255.0, alpha: 1)
-		firstButton.addTarget(self, action: #selector(didTapFirstButton), for: .allEvents)
-	}
-
-	@objc private func didTapFirstButton() {
-		print("tap first")
+		firstButton.setImage(UIImage(named: "circle"), for: .normal)
+		firstButton.isSelected = false
 	}
 	
 	private func addPriorityColor() {
@@ -61,4 +55,3 @@ final class CustomTableViewCell: UITableViewCell {
 		myTextLable.numberOfLines = 0
 	}
 }
-

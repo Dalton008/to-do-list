@@ -79,8 +79,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let model = requestToModel.getModelItem(at: indexPath.row)
 		let cell = CustomTableViewCell(id: "\(indexPath.row)", text: model.name)
-		cell.selectionStyle = .none
+		cell.firstButton.tag = indexPath.row
+		cell.firstButton.addTarget(self, action: #selector(didTapFirst(button:)), for: .touchUpInside)
 		return cell
+	}
+
+	@objc private func didTapFirst(button: UIButton) {
+		if button.isSelected == false {
+			button.isSelected = true
+			button.setImage(UIImage(named: "done"), for: .normal)
+		}
+		else {
+			button.isSelected = false
+			button.setImage(UIImage(named: "circle"), for: .normal)
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
