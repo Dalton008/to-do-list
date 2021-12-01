@@ -10,7 +10,7 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
 	
-	private var childView = ChildView()
+	private var childView = AddTaskView()
 	
 	weak var delegate: SaveTaskToModelDelegate?
 	

@@ -79,18 +79,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let task = requestToModel.getModelItem(at: indexPath.row)
 		let cell = CustomTableViewCell(id: "\(indexPath.row)", text: task.name)
-		cell.completeButton.tag = indexPath.row
-		cell.completeButton.addTarget(self, action: #selector(didTapCompleteButton(button:)), for: .touchUpInside)
-		cell.completeButton.setTitle(task.name, for: .normal)
+		
+		cell.changeCompleteButton(tag: indexPath.row)
+		cell.addTargetCompleteButton(target: self, action: #selector(didTapCompleteButton))
+		cell.setTitleCompleteButton(title: task.name)
 		if task.isCompleted == false {
-			cell.completeButton.setImage(UIImage(named: "circle"), for: .normal)
-			cell.completeButton.isSelected = false
+			cell.setImageCompleteButton(image: UIImage(named: "circle")!)
+			cell.setSelectedCompleteButton(isSelected: false)
 		}
 		else {
-			cell.completeButton.setImage(UIImage(named: "done"), for: .normal)
-			cell.completeButton.isSelected = true
+			cell.setImageCompleteButton(image: UIImage(named: "done")!)
+			cell.setSelectedCompleteButton(isSelected: true)
 		}
-		
 		return cell
 	}
 
@@ -98,13 +98,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 		if button.isSelected == false {
 			button.isSelected = true
 			button.setImage(UIImage(named: "done"), for: .normal)
-			requestToModel.updateIsComplete(with: button.currentTitle ?? "name")
+			requestToModel.updateIsComplete(with: button.currentTitle ?? "task name")
 			requestToModel.updateTasks()
 		}
 		else {
 			button.isSelected = false
 			button.setImage(UIImage(named: "circle"), for: .normal)
-			requestToModel.updateIsComplete(with: button.currentTitle ?? "name")
+			requestToModel.updateIsComplete(with: button.currentTitle ?? "task name")
 			requestToModel.updateTasks()
 		}
 	}

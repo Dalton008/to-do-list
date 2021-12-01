@@ -15,7 +15,7 @@ final class CustomTableViewCell: UITableViewCell {
 		return label
 	}()
 	
-	let completeButton = UIButton()
+	private let completeButton = UIButton()
 	
 	private lazy var priorityColor: UILabel = {
 		let label = UILabel()
@@ -63,5 +63,25 @@ final class CustomTableViewCell: UITableViewCell {
 	private func addTextLabel(text: String) {
 		myTextLable.text = text
 		mainLabel.setupConstraints(label: myTextLable, topAnchor: mainLabel.topAnchor, botAnchor: mainLabel.bottomAnchor, leftAnchor: completeButton.trailingAnchor, rightAnchor: priorityColor.leadingAnchor, topConst: 8, botConst: -8, leadingConst: 8, trailingConst: -4, heightConst: nil, widthConst: nil)
+	}
+	
+	func changeCompleteButton(tag: Int) {
+		completeButton.tag = tag
+	}
+	
+	func addTargetCompleteButton(target: Any, action: Selector) {
+		completeButton.addTarget(target, action: action, for: .touchUpInside)
+	}
+	
+	func setTitleCompleteButton(title: String) {
+		completeButton.setTitle(title, for: .normal)
+	}
+	
+	func setImageCompleteButton(image: UIImage) {
+		completeButton.setImage(image, for: .normal)
+	}
+	
+	func setSelectedCompleteButton(isSelected: Bool) {
+		completeButton.isSelected = isSelected
 	}
 }
