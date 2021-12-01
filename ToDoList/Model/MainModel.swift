@@ -56,7 +56,7 @@ class MainModel {
 		}
 	}
 	
-	func updateTask(item: ToDoListItem, newName: String) {
+	func updateNameTask(item: ToDoListItem, newName: String) {
 		item.name = newName
 		do {
 			try persistentContainer.viewContext.save()
@@ -66,7 +66,7 @@ class MainModel {
 		}
 	}
 	
-	func updateCompleteTask() {
+	func updateTasks() {
 		do {
 			try persistentContainer.viewContext.save()
 		}
@@ -83,7 +83,7 @@ class MainModel {
 		return models[index]
 	}
 	
-	func getModelitem(with name: String) -> ToDoListItem {
+	func getTask(with name: String) -> ToDoListItem {
 		for model in models {
 			if model.name == name {
 				return model
@@ -93,7 +93,7 @@ class MainModel {
 	}
 	
 	func updateIsComplete(with name: String) {
-		let temp = getModelitem(with: name)
+		let temp = getTask(with: name)
 		if temp.isCompleted == false {
 			temp.isCompleted = true
 		}

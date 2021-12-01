@@ -40,13 +40,13 @@ class ViewController: UIViewController {
 	}
 
 	@objc private func didTapAdd() {
-		let child = ChildViewController()
+		let child = AddTaskViewController()
 		child.transitioningDelegate = transition
 		child.modalPresentationStyle = .custom
 		child.delegate = self
 		present(child, animated: true)
 	}
-	
+
 	private func getAllTasks() {
 		requestToModel.getAllTasks()
 		DispatchQueue.main.async {
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
 	}
 	
 	private func updateTask(item: ToDoListItem, newName: String) {
-		requestToModel.updateTask(item: item, newName: newName)
+		requestToModel.updateNameTask(item: item, newName: newName)
 		getAllTasks()
 	}
 }
@@ -77,35 +77,35 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let model = requestToModel.getModelItem(at: indexPath.row)
-		let cell = CustomTableViewCell(id: "\(indexPath.row)", text: model.name)
-		cell.firstButton.tag = indexPath.row
-		cell.firstButton.addTarget(self, action: #selector(didTapFirst(button:)), for: .touchUpInside)
-		cell.firstButton.setTitle(model.name, for: .normal)
-		if model.isCompleted == false {
-			cell.firstButton.setImage(UIImage(named: "circle"), for: .normal)
-			cell.firstButton.isSelected = false
+		let task = requestToModel.getModelItem(at: indexPath.row)
+		let cell = CustomTableViewCell(id: "\(indexPath.row)", text: task.name)
+		cell.completeButton.tag = indexPath.row
+		cell.completeButton.addTarget(self, action: #selector(didTapCompleteButton(button:)), for: .touchUpInside)
+		cell.completeButton.setTitle(task.name, for: .normal)
+		if task.isCompleted == false {
+			cell.completeButton.setImage(UIImage(named: "circle"), for: .normal)
+			cell.completeButton.isSelected = false
 		}
 		else {
-			cell.firstButton.setImage(UIImage(named: "done"), for: .normal)
-			cell.firstButton.isSelected = true
+			cell.completeButton.setImage(UIImage(named: "done"), for: .normal)
+			cell.completeButton.isSelected = true
 		}
 		
 		return cell
 	}
 
-	@objc private func didTapFirst(button: UIButton) {
+	@objc private func didTapCompleteButton(button: UIButton) {
 		if button.isSelected == false {
 			button.isSelected = true
 			button.setImage(UIImage(named: "done"), for: .normal)
-			requestToModel.updateIsComplete(with: button.currentTitle!)
-			requestToModel.updateCompleteTask()
+			requestToModel.updateIsComplete(with: button.currentTitle ?? "name")
+			requestToModel.updateTasks()
 		}
 		else {
 			button.isSelected = false
 			button.setImage(UIImage(named: "circle"), for: .normal)
-			requestToModel.updateIsComplete(with: button.currentTitle!)
-			requestToModel.updateCompleteTask()
+			requestToModel.updateIsComplete(with: button.currentTitle ?? "name")
+			requestToModel.updateTasks()
 		}
 	}
 	

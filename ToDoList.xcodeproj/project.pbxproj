@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA0123962754FC9C007DFADF /* appetite-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA0123952754FC7A007DFADF /* appetite-italic.ttf */; };
-		FA1407592751282400EB4EDE /* ChildControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1407582751282400EB4EDE /* ChildControllerDelegate.swift */; };
+		FA1407592751282400EB4EDE /* AddTaskControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1407582751282400EB4EDE /* AddTaskControllerDelegate.swift */; };
 		FA14075B2751337800EB4EDE /* SaveTaskToModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14075A2751337800EB4EDE /* SaveTaskToModelDelegate.swift */; };
 		FA14075E2751486100EB4EDE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14075D2751486100EB4EDE /* CustomTableViewCell.swift */; };
 		FA1407602751543A00EB4EDE /* UIAlertController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14075F2751543A00EB4EDE /* UIAlertController+extension.swift */; };
@@ -22,7 +22,7 @@
 		FADFB9CF274FA86F00FE0873 /* ToDoListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFB9CD274FA86F00FE0873 /* ToDoListItem+CoreDataClass.swift */; };
 		FADFB9D0274FA86F00FE0873 /* ToDoListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFB9CE274FA86F00FE0873 /* ToDoListItem+CoreDataProperties.swift */; };
 		FAE5A8182750EB67007B4FE9 /* PanelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5A8172750EB67007B4FE9 /* PanelTransition.swift */; };
-		FAE5A81A2750EEF3007B4FE9 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5A8192750EEF3007B4FE9 /* ChildViewController.swift */; };
+		FAE5A81A2750EEF3007B4FE9 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5A8192750EEF3007B4FE9 /* AddTaskViewController.swift */; };
 		FAE5A81C2750F062007B4FE9 /* BlackoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5A81B2750F062007B4FE9 /* BlackoutController.swift */; };
 		FAE5A81E2750F6E9007B4FE9 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5A81D2750F6E9007B4FE9 /* PresentAnimation.swift */; };
 		FAE5A8202750FA69007B4FE9 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5A81F2750FA69007B4FE9 /* DismissAnimation.swift */; };
@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		FA0123952754FC7A007DFADF /* appetite-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "appetite-italic.ttf"; path = "../../../../Downloads/appetite-italic.ttf"; sourceTree = "<group>"; };
-		FA1407582751282400EB4EDE /* ChildControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildControllerDelegate.swift; sourceTree = "<group>"; };
+		FA1407582751282400EB4EDE /* AddTaskControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskControllerDelegate.swift; sourceTree = "<group>"; };
 		FA14075A2751337800EB4EDE /* SaveTaskToModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTaskToModelDelegate.swift; sourceTree = "<group>"; };
 		FA14075D2751486100EB4EDE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		FA14075F2751543A00EB4EDE /* UIAlertController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+extension.swift"; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		FADFB9CD274FA86F00FE0873 /* ToDoListItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FADFB9CE274FA86F00FE0873 /* ToDoListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FAE5A8172750EB67007B4FE9 /* PanelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTransition.swift; sourceTree = "<group>"; };
-		FAE5A8192750EEF3007B4FE9 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		FAE5A8192750EEF3007B4FE9 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		FAE5A81B2750F062007B4FE9 /* BlackoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackoutController.swift; sourceTree = "<group>"; };
 		FAE5A81D2750F6E9007B4FE9 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
 		FAE5A81F2750FA69007B4FE9 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
@@ -122,11 +122,11 @@
 			isa = PBXGroup;
 			children = (
 				FA22B641274F8AAA00E8AEE0 /* ViewController.swift */,
-				FAE5A8192750EEF3007B4FE9 /* ChildViewController.swift */,
+				FAE5A8192750EEF3007B4FE9 /* AddTaskViewController.swift */,
 				FAE5A81B2750F062007B4FE9 /* BlackoutController.swift */,
 				FAE5A8212750FBF6007B4FE9 /* PresentationController.swift */,
 				FAE5A8172750EB67007B4FE9 /* PanelTransition.swift */,
-				FA1407582751282400EB4EDE /* ChildControllerDelegate.swift */,
+				FA1407582751282400EB4EDE /* AddTaskControllerDelegate.swift */,
 				FA14075A2751337800EB4EDE /* SaveTaskToModelDelegate.swift */,
 			);
 			path = Controller;
@@ -212,7 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2D02D1274FDB00007FA98C /* MainModel.swift in Sources */,
-				FAE5A81A2750EEF3007B4FE9 /* ChildViewController.swift in Sources */,
+				FAE5A81A2750EEF3007B4FE9 /* AddTaskViewController.swift in Sources */,
 				FA1407602751543A00EB4EDE /* UIAlertController+extension.swift in Sources */,
 				FADFB9CF274FA86F00FE0873 /* ToDoListItem+CoreDataClass.swift in Sources */,
 				FAE5A8182750EB67007B4FE9 /* PanelTransition.swift in Sources */,
@@ -223,7 +223,7 @@
 				FA22B658274F8FFF00E8AEE0 /* ChildView.swift in Sources */,
 				FA14075E2751486100EB4EDE /* CustomTableViewCell.swift in Sources */,
 				FA14075B2751337800EB4EDE /* SaveTaskToModelDelegate.swift in Sources */,
-				FA1407592751282400EB4EDE /* ChildControllerDelegate.swift in Sources */,
+				FA1407592751282400EB4EDE /* AddTaskControllerDelegate.swift in Sources */,
 				FAE5A8222750FBF6007B4FE9 /* PresentationController.swift in Sources */,
 				FA22B63E274F8AAA00E8AEE0 /* AppDelegate.swift in Sources */,
 				FA22B648274F8AAA00E8AEE0 /* ToDoList.xcdatamodeld in Sources */,

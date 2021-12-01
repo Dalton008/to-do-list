@@ -10,7 +10,7 @@ import UIKit
 
 class ChildView: UIView {
 	
-	weak var delegate: ChildControllerDelegate?
+	weak var delegate: AddTaskControllerDelegate?
 	
 	private lazy var mainTitle: UILabel = {
 		let label = UILabel()

@@ -10,10 +10,27 @@ import UIKit
 
 final class CustomTableViewCell: UITableViewCell {
 	
-	let mainLabel = UILabel()
-	let firstButton = UIButton()
-	let priorityColor = UILabel()
-	let myTextLable = UILabel()
+	private lazy var mainLabel: UILabel = {
+		let label = UILabel()
+		return label
+	}()
+	
+	let completeButton = UIButton()
+	
+	private lazy var priorityColor: UILabel = {
+		let label = UILabel()
+		label.backgroundColor = .systemOrange
+		label.layer.cornerRadius = 5
+		label.layer.masksToBounds = true
+		return label
+	}()
+	
+	private let myTextLable: UILabel = {
+		let label = UILabel()
+		label.lineBreakMode = NSLineBreakMode.byWordWrapping
+		label.numberOfLines = 0
+		return label
+	}()
 	
 	init(id: String, text: String) {
 		super.init(style: .default, reuseIdentifier: nil)
@@ -32,8 +49,8 @@ final class CustomTableViewCell: UITableViewCell {
 	}
 
 	private func addFirstButton() {
-		let constY = NSLayoutConstraint(item: firstButton, attribute: .centerY, relatedBy: .equal, toItem: mainLabel, attribute: .centerY, multiplier: 1.0, constant: 1)
-		self.setupConstraints(label: firstButton, topAnchor: nil, botAnchor: nil, leftAnchor: mainLabel.leadingAnchor, rightAnchor: nil, topConst: nil, botConst: nil, leadingConst: 8, trailingConst: nil, heightConst: 24, widthConst: 24)
+		let constY = NSLayoutConstraint(item: completeButton, attribute: .centerY, relatedBy: .equal, toItem: mainLabel, attribute: .centerY, multiplier: 1.0, constant: 1)
+		self.setupConstraints(label: completeButton, topAnchor: nil, botAnchor: nil, leftAnchor: mainLabel.leadingAnchor, rightAnchor: nil, topConst: nil, botConst: nil, leadingConst: 8, trailingConst: nil, heightConst: 24, widthConst: 24)
 		NSLayoutConstraint.activate([constY])
 	}
 	
@@ -41,15 +58,10 @@ final class CustomTableViewCell: UITableViewCell {
 		let constY = NSLayoutConstraint(item: priorityColor, attribute: .centerY, relatedBy: .equal, toItem: mainLabel, attribute: .centerY, multiplier: 1.0, constant: 1)
 		mainLabel.setupConstraints(label: priorityColor, topAnchor: nil, botAnchor: nil, leftAnchor: nil, rightAnchor: mainLabel.trailingAnchor, topConst: nil, botConst: nil, leadingConst: nil, trailingConst: -4, heightConst: 10, widthConst: 10)
 		NSLayoutConstraint.activate([constY])
-		priorityColor.backgroundColor = .systemOrange
-		priorityColor.layer.cornerRadius = 5
-		priorityColor.layer.masksToBounds = true
 	}
 	
 	private func addTextLabel(text: String) {
 		myTextLable.text = text
-		mainLabel.setupConstraints(label: myTextLable, topAnchor: mainLabel.topAnchor, botAnchor: mainLabel.bottomAnchor, leftAnchor: firstButton.trailingAnchor, rightAnchor: priorityColor.leadingAnchor, topConst: 8, botConst: -8, leadingConst: 8, trailingConst: -4, heightConst: nil, widthConst: nil)
-		myTextLable.lineBreakMode = NSLineBreakMode.byWordWrapping
-		myTextLable.numberOfLines = 0
+		mainLabel.setupConstraints(label: myTextLable, topAnchor: mainLabel.topAnchor, botAnchor: mainLabel.bottomAnchor, leftAnchor: completeButton.trailingAnchor, rightAnchor: priorityColor.leadingAnchor, topConst: 8, botConst: -8, leadingConst: 8, trailingConst: -4, heightConst: nil, widthConst: nil)
 	}
 }
