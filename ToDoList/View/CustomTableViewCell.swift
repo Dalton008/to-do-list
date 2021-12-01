@@ -35,8 +35,6 @@ final class CustomTableViewCell: UITableViewCell {
 		let constY = NSLayoutConstraint(item: firstButton, attribute: .centerY, relatedBy: .equal, toItem: mainLabel, attribute: .centerY, multiplier: 1.0, constant: 1)
 		self.setupConstraints(label: firstButton, topAnchor: nil, botAnchor: nil, leftAnchor: mainLabel.leadingAnchor, rightAnchor: nil, topConst: nil, botConst: nil, leadingConst: 8, trailingConst: nil, heightConst: 24, widthConst: 24)
 		NSLayoutConstraint.activate([constY])
-		firstButton.setImage(UIImage(named: "circle"), for: .normal)
-		firstButton.isSelected = false
 	}
 	
 	private func addPriorityColor() {

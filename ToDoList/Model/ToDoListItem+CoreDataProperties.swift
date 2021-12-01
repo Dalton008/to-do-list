@@ -18,5 +18,5 @@ extension ToDoListItem {
 
 	@NSManaged public var dateCreate: Date
 	@NSManaged public var name: String
-
+	@NSManaged public var isCompleted: Bool
 }

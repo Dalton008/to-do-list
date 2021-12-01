@@ -81,6 +81,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 		let cell = CustomTableViewCell(id: "\(indexPath.row)", text: model.name)
 		cell.firstButton.tag = indexPath.row
 		cell.firstButton.addTarget(self, action: #selector(didTapFirst(button:)), for: .touchUpInside)
+		cell.firstButton.setTitle(model.name, for: .normal)
+		if model.isCompleted == false {
+			cell.firstButton.setImage(UIImage(named: "circle"), for: .normal)
+			cell.firstButton.isSelected = false
+		}
+		else {
+			cell.firstButton.setImage(UIImage(named: "done"), for: .normal)
+			cell.firstButton.isSelected = true
+		}
+		
 		return cell
 	}
 
@@ -88,10 +98,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 		if button.isSelected == false {
 			button.isSelected = true
 			button.setImage(UIImage(named: "done"), for: .normal)
+			requestToModel.updateIsComplete(with: button.currentTitle!)
+			requestToModel.updateCompleteTask()
 		}
 		else {
 			button.isSelected = false
 			button.setImage(UIImage(named: "circle"), for: .normal)
+			requestToModel.updateIsComplete(with: button.currentTitle!)
+			requestToModel.updateCompleteTask()
 		}
 	}
 	

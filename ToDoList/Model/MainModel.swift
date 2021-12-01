@@ -36,7 +36,7 @@ class MainModel {
 		let newItem = ToDoListItem(context: persistentContainer.viewContext)
 		newItem.name = name
 		newItem.dateCreate = Date()
-		
+		newItem.isCompleted = false
 		do {
 			try persistentContainer.viewContext.save()
 		}
@@ -66,11 +66,39 @@ class MainModel {
 		}
 	}
 	
+	func updateCompleteTask() {
+		do {
+			try persistentContainer.viewContext.save()
+		}
+		catch {
+			print("Cant update")
+		}
+	}
+	
 	func getCountModels() -> Int {
 		return models.count
 	}
 	
 	func getModelItem(at index: Int) -> ToDoListItem {
 		return models[index]
+	}
+	
+	func getModelitem(with name: String) -> ToDoListItem {
+		for model in models {
+			if model.name == name {
+				return model
+			}
+		}
+		return ToDoListItem()
+	}
+	
+	func updateIsComplete(with name: String) {
+		let temp = getModelitem(with: name)
+		if temp.isCompleted == false {
+			temp.isCompleted = true
+		}
+		else {
+			temp.isCompleted = false
+		}
 	}
 }
